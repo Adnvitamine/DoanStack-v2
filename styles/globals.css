@@ -6,37 +6,20 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 #__next {
-  width: 100%;
   min-height: 100vh;
-  max-height: 100vh;
+  min-width: 100%;
 }
 
 canvas {
   position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 320px;
-  height: 284px;
   top: 0;
   left: 0;
+  right: 0;
+  margin: auto;
+  min-width: 600px;
+  width: 40vw;
+  height: 50vh;
   z-index: 0;
-}
-
-@media only screen and (min-width: 1200px) {
-  canvas {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 800px;
-    height: 500px;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
 }
 
 a {
@@ -49,11 +32,45 @@ h1 {
   padding: 0;
 }
 
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
 p {
   margin: 0;
   padding: 0;
 }
 
+/* Declare text styles */
+h1,
+h2,
+p {
+  /* Font minimum, preferred and maximum value */
+  font-size: clamp(var(--min), var(--val), var(--max));
+}
+
+/* Font size variables */
+h1 {
+  --min: 2em; /* minimum value */
+  --val: 5vw; /* preferred value = 5% viewport width */
+  --max: 2.5em; /* maximum value */
+}
+h2 {
+  --min: 1.5em; /* minimum value */
+  --val: 4vw; /* preferred value = 4% viewport width */
+  --max: 2em; /* maximum value */
+}
+p {
+  --min: 1em; /* minimum value */
+  --val: 2.5vw; /* preferred value = 2.5% viewport width */
+  --max: 1.3em; /* maximum value */
+}
+
 * {
   box-sizing: border-box;
+}
+@font-face {
+  font-family: Custom;
+  src: url("http://localhost:3000/font.ttf");
 }
