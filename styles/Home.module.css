@@ -119,7 +119,6 @@
   animation: icon-animation 5s linear infinite;
   width: 10%;
   padding-bottom: 10%;
-  border: 1px solid black;
 }
 
 @keyframes icon-animation {
